@@ -1,0 +1,39 @@
+cmake_minimum_required(VERSION 2.6)
+project(Raytracer)
+
+include_directories(.)
+include_directories(./Primitive)
+include_directories(./kdtree)
+include_directories("D:\\C++Library\\Eigen3")
+
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_FLAGS "-std=c++11 -O2 -pipe ${CMAKE_CXX_FLAGS}")
+set(SOURCE_FILES
+	kdtree/hkdtree.cpp
+	kdtree/hnode.cpp
+	kdtree/mtree.cpp
+	Primitive/material.cpp
+	Primitive/primitive.cpp
+	Primitive/model.cpp
+	Primitive/bezier2.cpp
+	Primitive/bezier3.cpp
+	Primitive/mesh.cpp
+	Primitive/texture.cpp
+	Primitive/triangle.cpp
+	api.cpp
+	engine.cpp
+	hitpoint.cpp
+	image.cpp
+	intersection.cpp
+	light.cpp
+	main.cpp
+	photon.cpp
+	ppmrender.cpp
+	ray.cpp
+	scene.cpp
+	vector3.cpp
+)
+add_executable(Raytracer ${SOURCE_FILES})
+
+
+target_link_libraries(Raytracer ${OpenCV_LIBS})

@@ -1,0 +1,178 @@
+All
+	Camera
+		up 0.235702260396 0.942809041582 -0.235702260396
+		position -40 20 40
+		direction 0.666666666667 -0.333333333333 -0.666666666667
+		f 47
+		width 28.2
+		height 21.15
+		samples 1
+		aperture 0
+		image
+			height 900
+			width 1200
+		end
+	end
+
+	Scene
+		Light SurfaceLight
+			center 0 40 20
+			u 1 0 0
+			v 0.0 -0.4472135955 0.894427191
+			angle 30
+			width 4
+			height 3
+			color 1 1 1
+			power 1500
+		end
+
+		Light SurfaceLight
+			center -25 25 20
+			u 0.624695047554 0.0 0.780868809443
+			v -0.480591530068 -0.788170109312 0.384473224054
+			angle 45
+			width 3
+			height 3
+			color 1 1 1
+			power 1200
+		end
+
+
+		/*Light SpotLight
+			center 0 40 20
+			angle 45
+			direction 0.0 -0.894427191 -0.4472135955
+			color 1 1 1
+			power 3000
+		end*/
+
+		Primitive
+			Id 0
+			Model Bezier2
+				center 0 0 0
+				u 0 0 1
+				v 1 0 0
+				bpt ../Resources/Bezier/bowling.bpt
+				Scale
+					x 2
+					y 2
+				end
+				Rotate
+					y 20
+				end
+			end
+
+			Material
+				refl 0.0
+				refr 0.0
+				diff 0.7
+				spec 0.1
+				Texture
+					ttr ../Resources/Texture/bowling_pin.ttr
+				end
+			end
+		end
+
+		Primitive
+			Id 1
+			Model Plane
+				normal 0 1 0
+				distance 0
+				u 1 0 0
+				v 0 0 -1
+				block 20
+				center 0 0 0
+			end
+			Material
+				refl 0.3
+				refr 0.0
+				diff 0.6
+				spec 0.0
+				color 1 1 1
+				Texture
+					ttr ../Resources/Texture/colorful_floor.ttr
+				end
+			end
+		end
+
+		Primitive
+			Id 11
+			Model Plane
+				normal 0 0 1
+				distance 13
+			end
+			Material
+				refl 0.6
+				refr 0.0
+				diff 0.0
+				spec 0.0
+				color 1 1 1
+			end
+		end
+
+		Primitive
+			Id 2
+			Model Sphere
+				center 7 3.5 7
+				R 3.5
+			end
+			Material
+				refl 0.1
+				refr 0.0
+				diff 0.8
+				spec 0.1
+				color 1 1 1
+				Texture
+					ttr ../Resources/Texture/sphere1.ttr
+				end
+			end
+			
+		end
+
+		Primitive 
+			Id 3
+			Model Sphere
+				center -10 4 3
+				R 4
+			end
+			Material
+				refl 0.0
+				refr 0.8
+				diff 0.0
+				spec 0.1
+				color 0.9 1.0 1.0
+				rindex 1.3333
+			end
+		end
+
+		Primitive //bunny
+			Id 4
+			Model Mesh
+				obj ../Resources/Mesh/bunny.obj
+				Scale
+					x 2
+					y 2
+					z 2
+				end
+				Rotate
+					y -60
+				end
+
+				center -7 0.6 13
+				u 1 0 0
+				v 0 1 0
+			end
+
+			Material
+				refl 0.0
+				refr 0.0
+				diff 0.8
+				spec 0.1
+				//color 0.4549,0.4275,0.72156
+				color 1 0.6627450980392157 0.5882352941176471
+				rindex 1.333
+			end
+		end
+
+	end
+end
